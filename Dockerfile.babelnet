@@ -1,0 +1,7 @@
+FROM scratch
+# this dockerfile should be run after downloading 
+MAINTAINER Joan Codina <joan.codina@upf.edu>
+WORKDIR /
+COPY .  /var/data/BabelNet-3.7
+
+ 
