@@ -1,4 +1,4 @@
-FROM taln/babelnet
+FROM taln/babelnetbase
 
 
 FROM maven:3-jdk-8
