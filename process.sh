@@ -1,9 +1,33 @@
 #!/bin/bash
-export LD_LIBRARY_PATH=/usr/local/share/freeling/APIs/java/
+
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    --input)
+    INPUT="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    --output)
+    OUTPUT="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    *)    # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+echo INPUT  = "${INPUT}"
+echo OUTPUT  = "${OUTPUT}"
+
 cd UIMA
-export CLASSPATH="target/FreeLingWrapper-0.1-SNAPSHOT.jar":$(<classPath.txt)
-java -Xmx450m -cp $CLASSPATH  edu.upf.taln.uima.freeling.FreelingXMIReaderWriter  '/input/*.txt' /output $1 xmi
-#java -Xmx450m -cp $CLASSPATH  edu.upf.taln.uima.freeling.FreelingXMIReaderWriter  '/input/*.txt' /output $1 xmi
-#java -Xmx450m -cp $CLASSPATH  edu.upf.taln.uima.freeling.FreelingXMIReaderWriter  'input/*.txt' output auto txt
-#java -Xmx450m -cp $CLASSPATH  edu.upf.taln.uima.freeling.FreelingXMIReaderWriter  'input/nb*.txt' output nb txt
-#java -Xmx450m -cp $CLASSPATH  edu.upf.taln.uima.freeling.FreelingXMIReaderWriter  'input/ru*.txt' output ru txt
+export CLASSPATH="target/BabelnetWrapper-0.1-SNAPSHOT.jar:.":`cat classPath.txt`
+java  -cp $CLASSPATH  edu.upf.taln.uima.babelnet.BabelNetXMIReaderWriter ${INPUT} ${OUTPUT} 
+#java -cp $CLASSPATH  edu.upf.taln.uima.babelnet.BabelNetXMIReaderWriter  input output

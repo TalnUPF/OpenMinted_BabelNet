@@ -110,6 +110,7 @@ public class BabelnetSenseInventory extends SenseInventoryBase
         throws SenseInventoryException
     {
         File configPathF = new File(configPath);
+        System.out.println(configPathF.getAbsolutePath());
         Configuration jltConf = Configuration.getInstance();
         jltConf.setConfigurationFile(new File(configPathF, "jlt.properties"));
         BabelNetConfiguration bnConf = BabelNetConfiguration.getInstance();

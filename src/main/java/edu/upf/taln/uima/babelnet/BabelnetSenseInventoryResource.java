@@ -29,7 +29,7 @@ import org.apache.uima.resource.ResourceSpecifier;
 
 import de.tudarmstadt.ukp.dkpro.wsd.si.SenseInventoryException;
 import de.tudarmstadt.ukp.dkpro.wsd.si.resource.SenseInventoryResourceBase;
-import edu.upf.taln.uima.wsd.si.babelnet.BabelnetSenseInventory;
+import edu.upf.taln.uima.babelnet.BabelnetSenseInventory;
 import it.uniroma1.lcl.babelnet.BabelNet;
 import it.uniroma1.lcl.jlt.util.Language;
 
