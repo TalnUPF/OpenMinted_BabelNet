@@ -1,20 +1,21 @@
-/*******************************************************************************
- * Copyright 2016
- * Ubiquitous Knowledge Processing (UKP) Lab
- * Technische Universität Darmstadt
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- ******************************************************************************/
+/*
+OpenMinted_Babelnet
+Copyright (C) 2018  grup TALN - Universitat Pompeu Fabra
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/ 
+
 
 /**
  *
@@ -56,8 +57,10 @@ import it.uniroma1.lcl.jlt.Configuration;
 
 
 /**
- * A sense inevntory for UBY
+ * A sense inevntory for Babelnet
  *
+ * @author <a href="mailto:joan.codina@upf.edu">Joan Codina</a>
+ * based on dkpro WSD
  * @author <a href="mailto:miller@ukp.informatik.tu-darmstadt.de">Tristan Miller</a>
  *
  */
@@ -104,6 +107,8 @@ public class BabelnetSenseInventory extends SenseInventoryBase
      *            files. if not then duplicate this method with more paremeters 
      * @param lang
      * 			default language
+     * @param desclang
+     * 			Languange of the sense description (usefull for languages you don't understand) 
      * @throws SenseInventoryException
      */
     public BabelnetSenseInventory(String configPath, Language lang,Language descLang)
@@ -133,29 +138,7 @@ public class BabelnetSenseInventory extends SenseInventoryBase
    
     
     
-    /*
-    public BabelnetSenseInventory(BabelNetConfiguration bnConf)
-        throws SenseInventoryException
-    {
-        try {
-            babelNet = new BabelNet(bnConf);
-
-            File configPath = new File("src/main/resources/config");
-            Configuration jltConf = Configuration.getInstance();
-            jltConf.setConfigurationFile(new File(configPath, "jlt.properties"));
-            BabelNetConfiguration bnConf = BabelNetConfiguration.getInstance();
-            bnConf.setConfigurationFile(new File(configPath, "babelnet.properties"));
-            bnConf.setBasePath(configPath.getAbsolutePath() + "/");
-            BabelNet babelnet = BabelNet.getInstance();
-
-
-        }
-        catch (IllegalArgumentException e) {
-            throw new SenseInventoryException(e);
-        }
-    }
-    */ 
-    
+     
     public void setSenseDescriptionFormat(String format)
     {
         if (format == null) {
