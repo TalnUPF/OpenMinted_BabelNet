@@ -3,8 +3,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ns0:componentMetadataRecord xmlns:ns0="http://www.meta-share.org/OMTD-SHARE_XMLSchema">
 	<ns0:metadataHeaderInfo>
-		<ns0:metadataRecordIdentifier metadataIdentifierSchemeName="OMTD">be287703-9e8a-4622-83e9-7c4266f7a3fb</ns0:metadataRecordIdentifier>
-		<ns0:metadataCreationDate>2018-04-12Z</ns0:metadataCreationDate>
 		<ns0:metadataCreators>
 			<ns0:metadataCreator>
 				<ns0:surname>Codina Filbà</ns0:surname>
@@ -58,8 +56,8 @@
 		<ns0:distributionInfos>
 			<ns0:componentDistributionInfo>
 				<ns0:componentDistributionForm>dockerImage</ns0:componentDistributionForm>
-				<ns0:distributionLocation>https://hub.docker.com/r/taln/babelnetbase</ns0:distributionLocation>
-				<ns0:command>docker run -v /var/data/openminted/input:/input -ti -v /var/data/openminted/output:/output openminted_babelnet process.sh --input /input --output /output --param:language=en</ns0:command>
+				<ns0:distributionLocation>taln/openminted_babelnet:1.0</ns0:distributionLocation>
+				<ns0:command>process.sh</ns0:command>
 			</ns0:componentDistributionInfo>
 		</ns0:distributionInfos>
 		<ns0:rightsInfo>
@@ -75,13 +73,12 @@
 		</ns0:rightsInfo>
 		<ns0:parameterInfos />
 		<ns0:inputContentResourceInfo>
-			<ns0:processingResourceType>document</ns0:processingResourceType>
-			<ns0:dataFormats>
+			<ns0:processingResourceType>corpus</ns0:processingResourceType>
+			 <ns0:dataFormats>
 				<ns0:dataFormatInfo>
-					<ns0:dataFormat>http://w3id.org/meta-share/omtd-share/UimaCasFormat</ns0:dataFormat>
-					<ns0:dataFormatOther>XMI</ns0:dataFormatOther>
+					<ns0:dataFormat>http://w3id.org/meta-share/omtd-share/Xmi</ns0:dataFormat>
 				</ns0:dataFormatInfo>
-			</ns0:dataFormats>
+ 			</ns0:dataFormats>
 			<ns0:characterEncodings>
 				<ns0:characterEncoding>UTF-8</ns0:characterEncoding>
 			</ns0:characterEncodings>
@@ -95,13 +92,12 @@
 			</ns0:annotationTypes>
 		</ns0:inputContentResourceInfo>
 		<ns0:outputResourceInfo>
-			<ns0:processingResourceType>document</ns0:processingResourceType>
-			<ns0:dataFormats>
-				<ns0:dataFormatInfo>
-					<ns0:dataFormat>http://w3id.org/meta-share/omtd-share/UimaCasFormat</ns0:dataFormat>
-					<ns0:dataFormatOther>XMI</ns0:dataFormatOther>
-				</ns0:dataFormatInfo>
-			</ns0:dataFormats>
+			<ns0:processingResourceType>corpus</ns0:processingResourceType>
+		 <ns0:dataFormats>
+			<ns0:dataFormatInfo>
+				<ns0:dataFormat>http://w3id.org/meta-share/omtd-share/Xmi</ns0:dataFormat>
+			</ns0:dataFormatInfo>
+		</ns0:dataFormats>
 			<ns0:characterEncodings>
 				<ns0:characterEncoding>UTF-8</ns0:characterEncoding>
 			</ns0:characterEncodings>
